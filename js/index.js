@@ -48,6 +48,12 @@ modalCloseButton.addEventListener('click', function (e) {
     modalOverlay.classList.toggle('open');
 });
 
+window.onclick = function(event) {
+    if (event.target == modalOverlay) {
+        modalOverlay.classList.toggle('open');    
+    }
+};
+
 (function () {
     getCategories();
     getQuote();
