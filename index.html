@@ -11,10 +11,13 @@
             <h1>Chuck Says...</h1>
             <img src="images/chucknorris.jpg">
             <p id="chuckSays">Chuck Says...</p>
-            <button type="button" id="refreshQuote">Refresh Quote</button>
+            <button type="button" id="refreshQuote" class="refreshQuote">Refresh Quote</button>
             <form>
-                <input type="text" value="" id="categoryInput" required/>
-                <button type="submit" id="submitForm">Get an Animal Quote</button>
+                <label>
+                    Choose a Category:
+                    <input type="text" value="" id="categoryInput" name="categoryInput" required placeholder="Type in a category name"/>
+                </label>
+                <button type="submit" id="submitForm">Get a Quote</button>
             </form>
         </div>
     </body>

@@ -20,6 +20,15 @@ body {
     align-items: center;
 }
 
+button {
+    width: 150px;
+    height: 50px;
+}
+
+.refreshQuote {
+    margin-bottom: 20px;
+}
+
 h1, p {
     color: white;
 }
@@ -29,11 +38,6 @@ h1 {
 }
 
 p {
-    padding: 30px;
+    margin: 30px;
     font-size: 1.5rem;
-}
-
-button {
-    width: 150px;
-    height: 75px;
 }
