@@ -12,6 +12,21 @@ const getQuote = (category) => {
     });
 }
 
+const getCategories = () => {
+    const url = `https://api.chucknorris.io/jokes/categories`;
+    const dropdownMenu = document.getElementById('categoryInput');
+    get(url).then(function (categoryArray) {
+        categoryArray.map(function(category) {
+            const catOption = document.createElement('option');
+            if (category != 'explicit') {
+                catOption.value = category;
+                catOption.text = category;
+                dropdownMenu.appendChild(catOption);
+            }
+        })
+    });
+}
+
 refreshButton.addEventListener('click', function (e) {
     e.preventDefault();
     getQuote(defaultCategory);
@@ -25,5 +40,6 @@ submitFormButton.addEventListener('submit', function (e) {
 });
 
 (function () {
+    getCategories();
     getQuote(defaultCategory);
 })();
