@@ -3,12 +3,15 @@
 const chuckSays = document.getElementById('chuckSays');
 const refreshButton = document.getElementById('refreshQuote');
 const submitFormButton = document.getElementById('submitForm');
+const modalOverlay = document.querySelector('.modal-overlay');
+const modalCloseButton = document.getElementById('closeModal');
 let category = "dev";
 
 const getQuote = () => {
     const url = `https://api.chucknorris.io/jokes/random?category=${category}`;
     get(url).then(function(fetchResponse) {
         chuckSays.innerHTML = fetchResponse.value;
+        modalOverlay.classList.toggle('open');
     });
 }
 
@@ -39,6 +42,10 @@ getChuckQuotes.addEventListener('submit', e => {
     const userInput = document.getElementById('categoryInput');
     category = userInput.value;
     getQuote();
+});
+
+modalCloseButton.addEventListener('click', function (e) {
+    modalOverlay.classList.toggle('open');
 });
 
 (function () {
